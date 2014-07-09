@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *myTextField;
 @property (strong, nonatomic) IBOutlet UILabel *myResultsLabel;
 @property (strong, nonatomic) IBOutlet UIButton *myButton;
@@ -17,9 +17,16 @@
 
 @implementation ViewController
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.myTextField.delegate = self;
+}
+
 
 - (IBAction)onMyButtonTapped:(id)sender
 {
+    [self.myTextField resignFirstResponder];
     NSString *testString = self.myTextField.text;
     
 //Remove all whitespace and non alpha numeric characters from string and put words into an array
@@ -27,9 +34,9 @@
     NSArray *componentsOfStringWithoutPunct = [testString componentsSeparatedByCharactersInSet:nonCharacters];
     componentsOfStringWithoutPunct = [componentsOfStringWithoutPunct filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self <> ''"]];
     
-//Join all the words or letters into one string
-    NSString *stringFromArrayJoinedTogether = [componentsOfStringWithoutPunct componentsJoinedByString:@""];
-    
+//Join all the words or letters into one string, all lowercase
+    NSString *stringFromArrayJoinedTogether = [[componentsOfStringWithoutPunct componentsJoinedByString:@""]lowercaseString];
+
 //Separate out each letter and add to an array
     NSMutableArray *arrayOfLetters = [NSMutableArray array];
     for (int i = 0; i<stringFromArrayJoinedTogether.length; i++) {
@@ -38,7 +45,14 @@
     }
     
 //Pass array to test it
-    [self testArrayForPalindrome:arrayOfLetters];
+    if (testString.length == 0) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Missing Data" message:@"Please enter in text into the text field" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
+    else
+    {
+        [self testArrayForPalindrome:arrayOfLetters];
+    }
 }
 
 
@@ -67,13 +81,14 @@
     
 //Reverse the second half array
     NSMutableArray *reversedSecondHalfArray = [NSMutableArray array];
-    
-    for (NSString *eachString in [secondHalfArray reverseObjectEnumerator]) {
+    for (NSString *eachString in [secondHalfArray reverseObjectEnumerator])
+    {
         [reversedSecondHalfArray addObject:eachString];
     }
 
 //Compare the arrays
-    if ([firstHalfArray isEqualToArray:reversedSecondHalfArray]) {
+    if ([firstHalfArray isEqualToArray:reversedSecondHalfArray])
+    {
         self.myResultsLabel.text = @"TRUE";
     }
     else{

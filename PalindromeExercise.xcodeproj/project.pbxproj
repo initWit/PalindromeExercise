@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6614F3E5196DD2160011FD2E /* RPForangeUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6614F3E4196DD2160011FD2E /* RPForangeUIButton.m */; };
 		D83E581E196D6E88007EEA00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83E581D196D6E88007EEA00 /* Foundation.framework */; };
 		D83E5820196D6E88007EEA00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83E581F196D6E88007EEA00 /* CoreGraphics.framework */; };
 		D83E5822196D6E88007EEA00 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83E5821196D6E88007EEA00 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6614F3E4196DD2160011FD2E /* RPForangeUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPForangeUIButton.m; sourceTree = "<group>"; };
+		6614F3E6196DD22E0011FD2E /* RPForangeUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPForangeUIButton.h; sourceTree = "<group>"; };
 		D83E581A196D6E88007EEA00 /* PalindromeExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalindromeExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83E581D196D6E88007EEA00 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D83E581F196D6E88007EEA00 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +115,8 @@
 		D83E5823196D6E88007EEA00 /* PalindromeExercise */ = {
 			isa = PBXGroup;
 			children = (
+				6614F3E6196DD22E0011FD2E /* RPForangeUIButton.h */,
+				6614F3E4196DD2160011FD2E /* RPForangeUIButton.m */,
 				D83E582C196D6E88007EEA00 /* AppDelegate.h */,
 				D83E582D196D6E88007EEA00 /* AppDelegate.m */,
 				D83E582F196D6E88007EEA00 /* Main.storyboard */,
@@ -248,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6614F3E5196DD2160011FD2E /* RPForangeUIButton.m in Sources */,
 				D83E5834196D6E88007EEA00 /* ViewController.m in Sources */,
 				D83E582E196D6E88007EEA00 /* AppDelegate.m in Sources */,
 				D83E582A196D6E88007EEA00 /* main.m in Sources */,
@@ -455,6 +461,7 @@
 				D83E584E196D6E88007EEA00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D83E584F196D6E88007EEA00 /* Build configuration list for PBXNativeTarget "PalindromeExerciseTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +470,7 @@
 				D83E5851196D6E88007EEA00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
